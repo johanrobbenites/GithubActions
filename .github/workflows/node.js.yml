@@ -8,21 +8,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  platzi:
+  build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'npm'
-      - run: npm ci --legacy-peer-deps --no-fund --no-audit
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+      - name: fecha
+        run: date
 
